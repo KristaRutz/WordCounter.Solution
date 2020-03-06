@@ -40,14 +40,14 @@ namespace WordCounter.Models
       string output = input;
 
       // recursively remove prefixed punctuation
-      if (!Char.IsLetterOrDigit(output[0]))
+      if (output != "" && !Char.IsLetterOrDigit(output[0]))
       {
         output = output.Substring(1);
         output = RemovePunctuation(output);
       }
 
       //recursively remove suffixed punctuation
-      if (!Char.IsLetterOrDigit(output[output.Length - 1]))
+      if (output != "" && !Char.IsLetterOrDigit(output[output.Length - 1]))
       {
         output = output.Substring(0, output.Length - 1);
         output = RemovePunctuation(output);
