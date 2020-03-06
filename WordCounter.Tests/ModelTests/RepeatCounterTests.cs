@@ -90,5 +90,17 @@ namespace WordCounter.Tests
     {
       Assert.AreEqual("test", RepeatCounter.RemovePunctuation("test"));
     }
+
+    [TestMethod]
+    public void RemovePunctuation_RemovesPuncuationFromEnds_StringSansPunctuation()
+    {
+      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("'test!'"));
+    }
+
+    [TestMethod]
+    public void RemovePunctuation_KeepsPunctuationInMiddle_String()
+    {
+      Assert.AreEqual("don't", RepeatCounter.RemovePunctuation("don't"));
+    }
   }
 }
