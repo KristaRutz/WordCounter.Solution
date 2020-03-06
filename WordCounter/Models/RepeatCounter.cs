@@ -26,12 +26,18 @@ namespace WordCounter.Models
       foreach (string word in words)
       {
         Console.WriteLine(word);
-        if (word == Word)
+        if (RemovePunctuation(word) == RemovePunctuation(Word))
         {
           matches++;
         }
       }
       return matches;
+    }
+
+    public static string RemovePunctuation(string input)
+    {
+      string output = input;
+      return output;
     }
 
     public bool Validate()

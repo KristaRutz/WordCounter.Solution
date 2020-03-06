@@ -84,5 +84,11 @@ namespace WordCounter.Tests
       RepeatCounter example = new RepeatCounter("test", "this test is a 'test.'");
       Assert.AreEqual(2, example.Matches());
     }
+
+    [TestMethod]
+    public void RemovePunctuation_RemovesNothingFromAlphaNumeric_String()
+    {
+      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("test"));
+    }
   }
 }
