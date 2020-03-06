@@ -12,5 +12,12 @@ namespace WordCounter.Tests
       RepeatCounter newCounter = new RepeatCounter();
       Assert.AreEqual(typeof(RepeatCounter), newCounter.GetType());
     }
+
+    [TestMethod]
+    public void RepeatCounter_IdentifiesEmptyWordInput_Zero()
+    {
+      RepeatCounter example = new RepeatCounter("", "test");
+      Assert.AreEqual(0, example.Matches());
+    }
   }
 }
