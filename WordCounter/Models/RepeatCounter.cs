@@ -19,7 +19,8 @@ namespace WordCounter.Models
 
     public int Matches()
     {
-      return 0;
+      int matches = 0;
+      return matches;
     }
   }
 }
