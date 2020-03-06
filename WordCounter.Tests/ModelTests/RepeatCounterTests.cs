@@ -21,10 +21,17 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void RepeatCounter_IdentifiesSingleWordEmptyStringInput_Zero()
+    public void RepeatCounter_IdentifiesEmptyStringInput_Zero()
     {
       RepeatCounter example = new RepeatCounter("", "test");
       Assert.AreEqual(0, example.Matches());
+    }
+
+    [TestMethod]
+    public void RepeatCounter_IdentifiesSingleWordSingleStringInput_One()
+    {
+      RepeatCounter example = new RepeatCounter("test", "test");
+      Assert.AreEqual(1, example.Matches());
     }
   }
 }
