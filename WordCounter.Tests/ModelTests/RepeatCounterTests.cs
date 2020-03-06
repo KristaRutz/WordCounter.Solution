@@ -14,20 +14,6 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void Matches_IdentifiesEmptyWordInput_Zero()
-    {
-      RepeatCounter example = new RepeatCounter("", "test");
-      Assert.AreEqual(0, example.Matches());
-    }
-
-    [TestMethod]
-    public void Matches_IdentifiesEmptyStringInput_Zero()
-    {
-      RepeatCounter example = new RepeatCounter("test", "");
-      Assert.AreEqual(0, example.Matches());
-    }
-
-    [TestMethod]
     public void Validate_IdentifiesEmptyWordInputs_False()
     {
       RepeatCounter emptyWord = new RepeatCounter("", "test");
@@ -46,6 +32,20 @@ namespace WordCounter.Tests
     {
       RepeatCounter example = new RepeatCounter("test", "test");
       Assert.AreEqual(true, example.Validate());
+    }
+
+    [TestMethod]
+    public void Matches_IdentifiesEmptyWordInput_Zero()
+    {
+      RepeatCounter example = new RepeatCounter("", "test");
+      Assert.AreEqual(0, example.Matches());
+    }
+
+    [TestMethod]
+    public void Matches_IdentifiesEmptyStringInput_Zero()
+    {
+      RepeatCounter example = new RepeatCounter("test", "");
+      Assert.AreEqual(0, example.Matches());
     }
 
     [TestMethod]
@@ -76,6 +76,13 @@ namespace WordCounter.Tests
     {
       RepeatCounter example = new RepeatCounter("test", "this test is still testing");
       Assert.AreEqual(1, example.Matches());
+    }
+
+    [TestMethod]
+    public void Matches_CheckFrequencyOfMatchWithPunctuation_Int()
+    {
+      RepeatCounter example = new RepeatCounter("test", "this test is a 'test.'");
+      Assert.AreEqual(2, example.Matches());
     }
   }
 }

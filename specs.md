@@ -34,7 +34,7 @@
   - Input: "test", "this test is a test"
   - Output: 2;
 
-- [ ] **Spec:** The program checks for full word matches only (case insensitive).
+- [x] **Spec:** The program checks for full word matches only (case sensitive).
 
   - Input: "test", "this **test** is still **test**ing"
   - Output: 1;
