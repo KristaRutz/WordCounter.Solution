@@ -20,6 +20,10 @@ namespace WordCounter.Models
     public int Matches()
     {
       int matches = 0;
+      if (Word == "")
+      {
+        return 0;
+      }
       string[] words = Str.Split(" ");
       foreach (string word in words)
       {

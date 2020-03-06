@@ -23,7 +23,7 @@ namespace WordCounter.Tests
     [TestMethod]
     public void RepeatCounter_IdentifiesEmptyStringInput_Zero()
     {
-      RepeatCounter example = new RepeatCounter("", "test");
+      RepeatCounter example = new RepeatCounter("test", "");
       Assert.AreEqual(0, example.Matches());
     }
 
