@@ -12,6 +12,8 @@ namespace WordCounter
       counter.Str = Console.ReadLine();
       Console.WriteLine("Enter the word you want to count:");
       counter.Word = Console.ReadLine();
+      Console.WriteLine("Case sensitive? [Y/N]");
+      counter.CaseSensitive = (Console.ReadLine().ToLower() == "y");
       int matches = counter.Matches();
       if (matches == 1)
       {
