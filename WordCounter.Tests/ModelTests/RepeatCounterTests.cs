@@ -28,10 +28,19 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void RepeatCounter_IdentifiesSingleWordSingleStringInput_One()
+    public void RepeatCounter_SingleWordSingleStringInput_One()
     {
       RepeatCounter example = new RepeatCounter("test", "test");
+      RepeatCounter example2 = new RepeatCounter("Hello", "Hello");
       Assert.AreEqual(1, example.Matches());
+      Assert.AreEqual(1, example2.Matches());
+    }
+
+    [TestMethod]
+    public void RepeatCounter_SingleWordMultiSameStringInput_Int()
+    {
+      RepeatCounter example = new RepeatCounter("test", "test test test");
+      Assert.AreEqual(3, example.Matches());
     }
   }
 }
