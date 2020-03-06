@@ -70,9 +70,10 @@ Download or clone the repository to run this program locally! _This program requ
   <summary>Expand specs for this project</summary>
 
 - [x] **Spec:** The file structure will be as shown:
-      Solution Name: WordCounter.Solution
-      ├──Project Name: WordCounter
-      └── Test Project Name: WordCounter.Tests
+
+  - Solution Name: WordCounter.Solution
+  - ├──Project Name: WordCounter
+  - └── Test Project Name: WordCounter.Tests
 
 - [x] **Spec:** When viewing the project on GitHub, WordCounter, WordCounter.Tests, and README.md should be visible at the top level of the repository.
 

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
@@ -17,6 +16,24 @@ namespace WordCounter.Models
       Str = str;
     }
 
+    public void NewSearch()
+    {
+      Console.WriteLine("Enter the text through which you wish to search:");
+      Str = Console.ReadLine();
+      Console.WriteLine("Enter the word you want to count:");
+      Word = Console.ReadLine();
+      Console.WriteLine("Case sensitive? [Y/N]");
+      CaseSensitive = (Console.ReadLine().ToLower() == "y");
+      int matches = Matches();
+      if (matches == 1)
+      {
+        Console.WriteLine("1 match found");
+      }
+      else
+      {
+        Console.WriteLine($"{matches} matches found");
+      }
+    }
     public int Matches()
     {
       if (!Validate())
@@ -79,6 +96,7 @@ namespace WordCounter.Models
     {
       if (Word == "" || Str == "")
       {
+        Console.WriteLine("One of your search terms was left empty.");
         return false;
       }
       return true;
