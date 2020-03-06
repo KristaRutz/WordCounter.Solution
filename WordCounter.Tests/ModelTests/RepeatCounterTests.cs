@@ -35,6 +35,30 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
+    public void RemovePunctuation_RemovesNothingFromAlphaNumeric_String()
+    {
+      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("test"));
+    }
+
+    [TestMethod]
+    public void RemovePunctuation_KeepsPunctuationInMiddle_String()
+    {
+      Assert.AreEqual("don't", RepeatCounter.RemovePunctuation("don't"));
+    }
+
+    [TestMethod]
+    public void RemovePunctuation_RemovesPuncuationFromEnd_StringSansEndPunctuation()
+    {
+      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("test!!!!!"));
+    }
+
+    [TestMethod]
+    public void RemovePunctuation_RemovesPuncuationFromBeginning_StringSansPrePunctuation()
+    {
+      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("....test"));
+    }
+
+    [TestMethod]
     public void Matches_IdentifiesEmptyWordInput_Zero()
     {
       RepeatCounter example = new RepeatCounter("", "test");
@@ -83,36 +107,6 @@ namespace WordCounter.Tests
     {
       RepeatCounter example = new RepeatCounter("test", "this test is a 'test.'");
       Assert.AreEqual(2, example.Matches());
-    }
-
-    [TestMethod]
-    public void RemovePunctuation_RemovesNothingFromAlphaNumeric_String()
-    {
-      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("test"));
-    }
-
-    [TestMethod]
-    public void RemovePunctuation_RemovesPuncuationFromEnd_StringSansEndPunctuation()
-    {
-      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("test!!!!!"));
-    }
-
-    [TestMethod]
-    public void RemovePunctuation_RemovesPuncuationFromBeginning_StringSansPrePunctuation()
-    {
-      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("....test"));
-    }
-
-    // [TestMethod]
-    // public void RemovePunctuation_RemovesPuncuationFromEnds_StringSansPunctuation()
-    // {
-    //   Assert.AreEqual("test", RepeatCounter.RemovePunctuation("'test!'"));
-    // }
-
-    [TestMethod]
-    public void RemovePunctuation_KeepsPunctuationInMiddle_String()
-    {
-      Assert.AreEqual("don't", RepeatCounter.RemovePunctuation("don't."));
     }
   }
 }
