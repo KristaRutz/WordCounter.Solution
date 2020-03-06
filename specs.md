@@ -29,7 +29,7 @@
   - Input: "test", "test test test"
   - Output: 3;
 
-- [ ] **Spec:** The program collects a single word input and checks how frequently that full word appears in a string, then returns the number.
+- [x] **Spec:** The program collects a single word input and checks how frequently that full word appears in a string, then returns the number.
 
   - Input: "test", "this test is a test"
   - Output: 2;

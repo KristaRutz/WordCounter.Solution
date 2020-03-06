@@ -49,5 +49,12 @@ namespace WordCounter.Tests
       RepeatCounter example = new RepeatCounter("test", "this test is a test");
       Assert.AreEqual(2, example.Matches());
     }
+
+    [TestMethod]
+    public void RepeatCounter_CheckFrequencyOfPerfectMatch_Int()
+    {
+      RepeatCounter example = new RepeatCounter("test", "this test is still testing");
+      Assert.AreEqual(1, example.Matches());
+    }
   }
 }
