@@ -92,15 +92,27 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void RemovePunctuation_RemovesPuncuationFromEnds_StringSansPunctuation()
+    public void RemovePunctuation_RemovesPuncuationFromEnd_StringSansEndPunctuation()
     {
-      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("'test!'"));
+      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("test!!!!!"));
     }
+
+    [TestMethod]
+    public void RemovePunctuation_RemovesPuncuationFromBeginning_StringSansPrePunctuation()
+    {
+      Assert.AreEqual("test", RepeatCounter.RemovePunctuation("....test"));
+    }
+
+    // [TestMethod]
+    // public void RemovePunctuation_RemovesPuncuationFromEnds_StringSansPunctuation()
+    // {
+    //   Assert.AreEqual("test", RepeatCounter.RemovePunctuation("'test!'"));
+    // }
 
     [TestMethod]
     public void RemovePunctuation_KeepsPunctuationInMiddle_String()
     {
-      Assert.AreEqual("don't", RepeatCounter.RemovePunctuation("don't"));
+      Assert.AreEqual("don't", RepeatCounter.RemovePunctuation("don't."));
     }
   }
 }

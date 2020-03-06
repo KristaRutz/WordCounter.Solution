@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
@@ -36,7 +37,41 @@ namespace WordCounter.Models
 
     public static string RemovePunctuation(string input)
     {
+      // char[] inputChars = input.ToCharArray();
+      // List<char> sansOuterPunctuation = new List<char>();
+      // for (int i = 0; i < inputChars.Length; i++)
+      // {
+      //   if (IsLetterOrDigit(inputChars[i]))
+      //   {
+      //     break;
+      //   } 
+      //   else
+      //   {
+
+      //   }
+      // }
+
       string output = input;
+
+      // for (int index = 0; index < input.Length; index++)
+      // {
+      //   string modified = output;
+      //   if (!Char.IsLetterOrDigit(input, index))
+      //   {
+      //     output = output.Substring(index);
+      //   }
+      //   else
+      //   {
+      //     break;
+      //   }
+      // }
+
+      if (!Char.IsLetterOrDigit(output[output.Length - 1]))
+      {
+        output = output.Substring(0, output.Length - 1);
+        output = RemovePunctuation(output);
+      }
+
       return output;
     }
 
