@@ -19,12 +19,12 @@
   - Input: "test", ""
   - Output: 0 matches;
 
-- [ ] **Spec:** The program collects a single word input and checks how frequently that full word appears in an inputted single word, then returns the number.
+- [x] **Spec:** The program collects a single word input and checks how frequently that full word appears in an inputted single word, then returns the number.
 
   - Input: "test", "test"
   - Output: 1;
 
-- [ ] **Spec:** The program collects a single word input and checks how frequently that full word appears in a string of only that word, then returns the number.
+- [x] **Spec:** The program collects a single word input and checks how frequently that full word appears in a string of only that word, then returns the number.
 
   - Input: "test", "test test test"
   - Output: 3;
