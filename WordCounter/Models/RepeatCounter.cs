@@ -27,7 +27,7 @@ namespace WordCounter.Models
       foreach (string word in words)
       {
         Console.WriteLine(word);
-        if (RemovePunctuation(word) == RemovePunctuation(Word))
+        if (RemovePunctuation(word) == Word || word == Word)
         {
           matches++;
         }

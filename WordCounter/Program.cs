@@ -12,7 +12,15 @@ namespace WordCounter
       counter.Str = Console.ReadLine();
       Console.WriteLine("Enter the word you want to count:");
       counter.Word = Console.ReadLine();
-      Console.WriteLine($"Your search returns ({counter.Matches()}) matches");
+      int matches = counter.Matches();
+      if (matches == 1)
+      {
+        Console.WriteLine("1 match found");
+      }
+      else
+      {
+        Console.WriteLine($"{matches} matches found");
+      }
       Console.WriteLine("Press 'Enter' to perform a new search");
       if (Console.ReadLine() == "")
       {
