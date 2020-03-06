@@ -7,10 +7,7 @@ namespace WordCounter.Models
     public string Word { get; set; }
     public string Str { get; set; }
 
-    public RepeatCounter()
-    {
-
-    }
+    public RepeatCounter() { }
     public RepeatCounter(string word, string str) : this()
     {
       Word = word;
@@ -29,7 +26,10 @@ namespace WordCounter.Models
       foreach (string word in words)
       {
         Console.WriteLine(word);
-        matches++;
+        if (word == Word)
+        {
+          matches++;
+        }
       }
       return matches;
     }
