@@ -19,11 +19,12 @@ namespace WordCounter.Models
 
     public int Matches()
     {
-      int matches = 0;
-      if (Word == "")
+      if (!Validate())
       {
         return 0;
       }
+
+      int matches = 0;
       string[] words = Str.Split(" ");
       foreach (string word in words)
       {
@@ -31,6 +32,15 @@ namespace WordCounter.Models
         matches++;
       }
       return matches;
+    }
+
+    public bool Validate()
+    {
+      if (Word == "" || Str == "")
+      {
+        return false;
+      }
+      return true;
     }
   }
 }
