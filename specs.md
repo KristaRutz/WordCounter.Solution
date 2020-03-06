@@ -39,6 +39,6 @@
   - Input: "test", "this **test** is still **test**ing"
   - Output: 1;
 
-- [ ] **Spec:** The program can find words separated at spaces, beginning and end of string, or with punctuation attached.
+- [x] **Spec:** The program can find words separated at spaces, beginning and end of string, or with punctuation attached.
   - Input: "test", "this test is a 'test.'"
   - Output: 2;

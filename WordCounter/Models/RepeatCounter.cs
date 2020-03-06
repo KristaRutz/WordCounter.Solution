@@ -8,6 +8,8 @@ namespace WordCounter.Models
     public string Word { get; set; }
     public string Str { get; set; }
 
+    public bool CaseSensitive { get; set; } = true;
+
     public RepeatCounter() { }
     public RepeatCounter(string word, string str) : this()
     {
@@ -22,12 +24,30 @@ namespace WordCounter.Models
         return 0;
       }
 
+      if (!CaseSensitive)
+      {
+        return CaseInsensitiveMatches();
+      }
+
       int matches = 0;
       string[] words = Str.Split(" ");
       foreach (string word in words)
       {
-        Console.WriteLine(word);
         if (RemovePunctuation(word) == Word || word == Word)
+        {
+          matches++;
+        }
+      }
+      return matches;
+    }
+
+    public int CaseInsensitiveMatches()
+    {
+      int matches = 0;
+      string[] words = Str.Split(" ");
+      foreach (string word in words)
+      {
+        if (RemovePunctuation(word.ToLower()) == Word.ToLower() || word.ToLower() == Word.ToLower())
         {
           matches++;
         }
